@@ -25,6 +25,6 @@ public class BancoTeste {
 
     @Test
     public void testeDeposito() {
-        assertEquals(banco.getSaldo() + 100, banco.deposito(200));
+        assertEquals(banco.getSaldo() + 100, banco.deposito(100));
     }
 }
