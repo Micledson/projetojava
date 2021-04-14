@@ -22,4 +22,9 @@ public class BancoTeste {
         assertEquals(banco.getSaldo() - 50, banco.saque(50));
         assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(200));
     }
+
+    @Test
+    public void testeDeposito() {
+        assertEquals(banco.getSaldo() + 100, banco.deposito(200));
+    }
 }
