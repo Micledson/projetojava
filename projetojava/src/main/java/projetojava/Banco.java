@@ -1,7 +1,7 @@
 package projetojava;
 
 public class Banco {
-    private double saldo = 100;
+    private double saldo = 0;
 
     public class SaldoInsuficiente extends Exception{
         private static final long serialVersionUID = 1L;
@@ -9,25 +9,25 @@ public class Banco {
 
     public double saque(double valor) throws SaldoInsuficiente {
         
-        if(getSaldo() < valor) {
+        if(saldo() < valor) {
             throw new SaldoInsuficiente();
         }
 
-        setSaldo(getSaldo() - valor);
+        setSaldo(saldo() - valor);
 
-        return getSaldo();
+        return saldo();
     }
 
     public double deposito(double valor) {
         
-        setSaldo(getSaldo() + valor);
+        setSaldo(saldo() + valor);
 
 
-        return getSaldo();
+        return saldo();
     }
 
 
-    public double getSaldo() {
+    public double saldo() {
         return this.saldo;
     }
 

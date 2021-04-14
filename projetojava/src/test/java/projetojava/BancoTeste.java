@@ -14,17 +14,18 @@ public class BancoTeste {
     @BeforeEach
     public void setUp() {
         banco = new Banco();
+        banco.deposito(100);
     }
 
     @Test
     public void testeSaque() throws SaldoInsuficiente {
-        assertEquals(banco.getSaldo() - 50, banco.saque(50));
-        assertEquals(banco.getSaldo() - 50, banco.saque(50));
+        assertEquals(banco.saldo() - 50, banco.saque(50));
+        assertEquals(banco.saldo() - 50, banco.saque(50));
         assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(200));
     }
 
     @Test
     public void testeDeposito() {
-        assertEquals(banco.getSaldo() + 100, banco.deposito(100));
+        assertEquals(banco.saldo() + 100, banco.deposito(100));
     }
 }
