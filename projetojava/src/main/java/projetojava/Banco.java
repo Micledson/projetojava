@@ -11,7 +11,7 @@ public class Banco {
     }
 
 
-    private double getSaldo() {
+    public double getSaldo() {
         return this.saldo;
     }
 
